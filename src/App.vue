@@ -227,13 +227,13 @@ const NextQuestion = () => {
   You really need to visit this : 
   <span class="underline"><a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a></span>
 </p>
-<p v-else-if="score >= 6 && score <= 8">
+<p class="mt-10 p-5 text-2xl border-2 border-emerald-600" v-else-if="score >= 6 && score <= 8">
   Well...
 </p>
-<p v-else-if="score >= 9 && score <= 11">
+<p class="mt-10 p-5 text-2xl border-2 border-emerald-600" v-else-if="score >= 9 && score <= 11">
   You're good but you can do better!
 </p>
-<p v-else>
+<p class="mt-10 p-5 text-2xl border-2 border-emerald-600" v-else>
   You're incredible!
 </p>
 
