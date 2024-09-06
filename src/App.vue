@@ -44,7 +44,7 @@ const questions = ref([
   },
 
   {
-	question: "Quelle propriété CSS est utilisée pour changer la couleur de fond d'un éléments?",
+	question: "Quelle propriété CSS est utilisée pour changer la couleur de fond d'un élément?",
 	answer: 0,
 	options: [
 		'background-color',
@@ -88,7 +88,7 @@ const questions = ref([
   },
 
   {
-	question: 'Lequel de ces opérateurs est utilisé pour comparer des valeurs strictement en JavaScript?',
+	question: 'Lequel de ces opérateurs est utilisé pour comparer des valeurs strictement égales en JavaScript?',
 	answer: 1,
 	options: [
 		'==',
@@ -153,12 +153,12 @@ const getCurrentQuestion = computed(() => {
 	return question
 })
 
-const SetAnswer = (e) => {
+const setAnswer = (e) => {
 	questions.value[currentQuestion.value].selected = e.target.value
 	e.target.value = null
 }
 
-const NextQuestion = () => {
+const nextQuestion = () => {
 	if (currentQuestion.value < questions.value.length - 1) {
 		currentQuestion.value++
 		return
@@ -201,14 +201,14 @@ const NextQuestion = () => {
 						:value="index" 
 						v-model="getCurrentQuestion.selected" 
 						:disabled="getCurrentQuestion.selected"
-						@change="SetAnswer" 
+						@change="setAnswer" 
 					/>
 					<span>{{ option }}</span>
 				</label>
 			</div>
 			
 			<button 
-				@click="NextQuestion" 
+				@click="nextQuestion" 
 				:disabled="!getCurrentQuestion.selected">
 				{{ 
 					getCurrentQuestion.index == questions.length - 1 
@@ -284,13 +284,15 @@ h1 {
 
 .quiz-info .question {
 	color: #FFF;
-	font-size: 1.25rem;
-  font-weight: 400;
+	font-size: 1.2rem;
+  font-weight: 600;
+  max-width: 80%;
 }
 
-.quiz-info.score {
+.quiz-info .score {
 	color: #FFF;
-	font-size: 1.25rem;
+	font-size: 1.2rem;
+	font-weight: 600;
 }
 
 .options {
@@ -324,6 +326,10 @@ h1 {
 
 .option.disabled {
 	opacity: 0.5;
+	cursor: not-allowed;
+	background-color: #061826;
+
+
 }
 
 .option input {
