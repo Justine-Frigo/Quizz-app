@@ -223,9 +223,9 @@ const NextQuestion = () => {
     <section v-else>
   <h2>You have finished the quiz!</h2>
   <p>Your score is {{ score }}/{{ questions.length }}!</p>
-  <p class="p-5 text-2xl text-emerald-500" v-if="score < 6">
+  <p class="mt-10 p-5 text-2xl border-2 border-emerald-600" v-if="score < 6">
   You really need to visit this : 
-  <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>
+  <span class="underline"><a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a></span>
 </p>
 <p v-else-if="score >= 6 && score <= 8">
   Well...
@@ -250,7 +250,7 @@ const NextQuestion = () => {
 }
 
 body {
-	background-color: #2C4044;
+	background-color: #061826;
 	color: #FFF;
 }
 
@@ -269,7 +269,7 @@ h1 {
 }
 
 .quiz {
-	background-color: #2C868E;
+	background-color: #2D848A;
 	padding: 1.5rem;
 	width: 100%;
 	max-width: 680px;
@@ -300,14 +300,14 @@ h1 {
 .option {
 	padding: 1rem;
 	display: block;
-	background-color: #2C4044;
+	background-color: #061826;
 	margin-bottom: 0.5rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
 
 .option:hover {
-	background-color: #2c404496;
+	background-color: #09273d;
 }
 
 .option.correct {
@@ -337,7 +337,7 @@ button {
 	cursor: pointer;
 	padding: 0.5rem 1rem;
 	background-color: #2cce7d;
-	color: #432E3C;
+	color: #061826;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 1.2rem;
@@ -346,6 +346,7 @@ button {
 
 button:disabled {
 	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 h2 {
